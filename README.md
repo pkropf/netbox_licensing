@@ -6,12 +6,12 @@
 
 <div align="center">
 <a href="https://pypi.org/project/netbox_licensing/"><img src="https://img.shields.io/pypi/v/netbox_licensing" alt="PyPi"/></a>
-<a href="https://github.com/pkropf/netbox_licensing/stargazers"><img src="https://img.shields.io/github/stars/ICTU/netbox_licensing" alt="Stars Badge"/></a>
-<a href="https://github.com/pkropf/netbox_licensing/network/members"><img src="https://img.shields.io/github/forks/ICTU/netbox_licensing" alt="Forks Badge"/></a>
-<a href="https://github.com/pkropf/netbox_licensing/pulls"><img src="https://img.shields.io/github/issues-pr/ICTU/netbox_licensing" alt="Pull Requests Badge"/></a>
-<a href="https://github.com/pkropf/netbox_licensing/issues"><img src="https://img.shields.io/github/issues/ICTU/netbox_licensing" alt="Issues Badge"/></a>
-<a href="https://github.com/pkropf/netbox_licensing/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/ICTU/netbox_licensing?color=2b9348"></a>
-<a href="https://github.com/pkropf/netbox_licensing/blob/master/LICENSE"><img src="https://img.shields.io/github/license/ICTU/netbox_licensing?color=2b9348" alt="License Badge"/></a>
+<a href="https://github.com/pkropf/netbox_licensing/stargazers"><img src="https://img.shields.io/github/stars/pkropf/netbox_licensing" alt="Stars Badge"/></a>
+<a href="https://github.com/pkropf/netbox_licensing/network/members"><img src="https://img.shields.io/github/forks/pkropf/netbox_licensing" alt="Forks Badge"/></a>
+<a href="https://github.com/pkropf/netbox_licensing/pulls"><img src="https://img.shields.io/github/issues-pr/pkropf/netbox_licensing" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/pkropf/netbox_licensing/issues"><img src="https://img.shields.io/github/issues/pkropf/netbox_licensing" alt="Issues Badge"/></a>
+<a href="https://github.com/pkropf/netbox_licensing/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/pkropf/netbox_licensing?color=2b9348"></a>
+<a href="https://github.com/pkropf/netbox_licensing/blob/master/LICENSE"><img src="https://img.shields.io/github/license/pkropf/netbox_licensing?color=2b9348" alt="License Badge"/></a>
 </div>
 
 
