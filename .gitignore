@@ -5,7 +5,7 @@
 **/.idea
 **/.vscode
 **/dist
-**/netbox_slm.egg-info
+**/netbox_licensing.egg-info
 ci/docker-compose.override.yml
 ci/reports
 out/production

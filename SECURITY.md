@@ -2,11 +2,11 @@
 
 ## Current status
 
-Netbox SLM is a plugin for Netbox with mostly default configuration. We advise to monitor Netbox security findings and update accordingly.
+Netbox Licensing is a plugin for Netbox with mostly default configuration. We advise to monitor Netbox security findings and update accordingly.
 
 ## Supported Versions
 
-Only the latest version of Netbox SLM is currently being supported with security updates. We aim to keep the plugin compatible with the latest Netbox version, but have no incentive to patch older tags at this point.
+Only the latest version of Netbox Licensing is currently being supported with security updates. We aim to keep the plugin compatible with the latest Netbox version, but have no incentive to patch older tags at this point.
 
 ## Reporting a Vulnerability
 

@@ -6,15 +6,15 @@ services:
     build:
       context: ..
       dockerfile: ci/Dockerfile-CI
-    image: netbox:slm
+    image: netbox:licensing
     environment:
       - COVERAGE_FILE=/ci/.coverage
     volumes:
       - ./reports:/ci/reports
   netbox-worker:
-    image: netbox:slm
+    image: netbox:licensing
   netbox-housekeeping:
-    image: netbox:slm
+    image: netbox:licensing
   postgres:
     ports:
       - "5432:5432"

@@ -14,4 +14,4 @@ RUN pip install --no-index /build
 FROM netboxcommunity/netbox:v3.6.1
 
 ARG PYTHON_VERSION=3.10
-COPY --from=compile-image /opt/netbox/venv/lib/python${PYTHON_VERSION}/site-packages/netbox_slm /opt/netbox/venv/lib/python${PYTHON_VERSION}/site-packages/netbox_slm
+COPY --from=compile-image /opt/netbox/venv/lib/python${PYTHON_VERSION}/site-packages/netbox_licensing /opt/netbox/venv/lib/python${PYTHON_VERSION}/site-packages/netbox_licensing

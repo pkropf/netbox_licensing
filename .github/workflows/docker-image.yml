@@ -17,14 +17,14 @@ jobs:
       run: docker compose build --no-cache
 
     - name: Verify the Docker image
-      # clearcache is provided by Django extras, which is not loaded if netbox-slm cannot be loaded
+      # clearcache is provided by Django extras, which is not loaded if netbox_licensing cannot be loaded
       run: docker compose run netbox sh -c "/opt/netbox/venv/bin/python manage.py clearcache"
 
-    - name: Run Django tests with coverage for netbox_slm
+    - name: Run Django tests with coverage for netbox_licensing
       run: |
         chmod go+w ci/reports
         docker compose run netbox sh -c " \
-          /opt/netbox/venv/bin/coverage run --source='netbox_slm' manage.py test netbox_slm && \
+          /opt/netbox/venv/bin/coverage run --source='netbox_licensing' manage.py test netbox_licensing && \
           /opt/netbox/venv/bin/coverage report --fail-under=0 && \
           /opt/netbox/venv/bin/coverage xml -o /ci/reports/coverage.xml"
 

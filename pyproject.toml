@@ -3,13 +3,14 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "netbox-slm"
+name = "netbox_licensing"
 dynamic = ["version"]
-description = "Software Lifecycle Management Netbox Plugin"
+description = "Software Licensing Management Netbox Plugin"
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "Apache-2.0" }
 authors = [
+    {name = "Peter Kropf", email = "pkropf@pm.me"},
     {name = "ICTU", email = "open-source-projects@ictu.nl"},
 ]
 classifiers = [
@@ -41,10 +42,10 @@ tools = [
 ]
 
 [tool.setuptools.dynamic]
-version = {attr = "netbox_slm.__version__"}
+version = {attr = "netbox_licensing.__version__"}
 
 [tool.setuptools.packages.find]
-include = ["netbox_slm"]
+include = ["netbox_licensing"]
 
 [tool.black]
 line-length = 120
@@ -54,20 +55,20 @@ check = true
 diff = true
 fast = true
 extend-exclude = '''
-netbox_slm/migrations/.*.py
+netbox_licensing/migrations/.*.py
 '''
 
 [tool.ruff]
 line-length = 120
 target-version = "py39"
 format = "github"
-src = ["netbox_slm"]
+src = ["netbox_licensing"]
 
 [tool.ruff.per-file-ignores]
 "__init__.py" = [
     "D104",  # https://beta.ruff.rs/docs/rules/#pydocstyle-d - don't require doc strings in __init__.py files
     "F401",  # https://beta.ruff.rs/docs/rules/#pyflakes-f - don't complain about unused imports in __init__.py files
 ]
-"netbox_slm/migrations/*.py" = [
+"netbox_licensing/migrations/*.py" = [
     "E501",  # https://beta.ruff.rs/docs/rules/line-too-long/ - don't check on Django generated migration files
 ]

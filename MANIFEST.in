@@ -1,7 +1,7 @@
 include LICENSE
 include README.md
 include SECURITY.md
-graft netbox_slm
-prune netbox_slm/tests
+graft netbox_licensing
+prune netbox_licensing/tests
 global-exclude *.py[cod]
 global-exclude __pycache__

@@ -1,15 +1,17 @@
-<h1 align="center">NetBox SLM</h1>
+<h1 align="center">NetBox Licensing</h1>
 
-<p align="center"><i>Netbox SLM is a plugin for lifecycle management of software components, including versions and installations.</i></p>
+<p align="center"><i>Netbox Licensing is a plugin for licensing management of software components, including versions and installations.</i></p>
+
+<p align="center"><i>Based on the Netbox SLM plugin found at https://github.com/pkropf/netbox_slm</i></p>
 
 <div align="center">
-<a href="https://pypi.org/project/netbox_slm/"><img src="https://img.shields.io/pypi/v/netbox_slm" alt="PyPi"/></a>
-<a href="https://github.com/ICTU/netbox_slm/stargazers"><img src="https://img.shields.io/github/stars/ICTU/netbox_slm" alt="Stars Badge"/></a>
-<a href="https://github.com/ICTU/netbox_slm/network/members"><img src="https://img.shields.io/github/forks/ICTU/netbox_slm" alt="Forks Badge"/></a>
-<a href="https://github.com/ICTU/netbox_slm/pulls"><img src="https://img.shields.io/github/issues-pr/ICTU/netbox_slm" alt="Pull Requests Badge"/></a>
-<a href="https://github.com/ICTU/netbox_slm/issues"><img src="https://img.shields.io/github/issues/ICTU/netbox_slm" alt="Issues Badge"/></a>
-<a href="https://github.com/ICTU/netbox_slm/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/ICTU/netbox_slm?color=2b9348"></a>
-<a href="https://github.com/ICTU/netbox_slm/blob/master/LICENSE"><img src="https://img.shields.io/github/license/ICTU/netbox_slm?color=2b9348" alt="License Badge"/></a>
+<a href="https://pypi.org/project/netbox_licensing/"><img src="https://img.shields.io/pypi/v/netbox_licensing" alt="PyPi"/></a>
+<a href="https://github.com/pkropf/netbox_licensing/stargazers"><img src="https://img.shields.io/github/stars/ICTU/netbox_licensing" alt="Stars Badge"/></a>
+<a href="https://github.com/pkropf/netbox_licensing/network/members"><img src="https://img.shields.io/github/forks/ICTU/netbox_licensing" alt="Forks Badge"/></a>
+<a href="https://github.com/pkropf/netbox_licensing/pulls"><img src="https://img.shields.io/github/issues-pr/ICTU/netbox_licensing" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/pkropf/netbox_licensing/issues"><img src="https://img.shields.io/github/issues/ICTU/netbox_licensing" alt="Issues Badge"/></a>
+<a href="https://github.com/pkropf/netbox_licensing/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/ICTU/netbox_licensing?color=2b9348"></a>
+<a href="https://github.com/pkropf/netbox_licensing/blob/master/LICENSE"><img src="https://img.shields.io/github/license/ICTU/netbox_licensing?color=2b9348" alt="License Badge"/></a>
 </div>
 
 
@@ -24,13 +26,13 @@ When using the Docker version of Netbox, first follow the netbox-docker [quickst
 
 Next, follow these instructions (based on the Netbox docker variant
 [instructions](https://github.com/netbox-community/netbox-docker/wiki/Configuration#custom-configuration-files))
-to install the Netbox SLM plugin:
+to install the Netbox Licensing plugin:
 
-1. Add ``netbox_slm`` to the ``PLUGINS`` list in
+1. Add ``netbox_licensing`` to the ``PLUGINS`` list in
    ``configuration/plugins.py``.
-2. Create a ``plugin_requirements.txt`` with ``netbox-slm`` as
+2. Create a ``plugin_requirements.txt`` with ``netbox_licensing`` as
    contents.
-3. Create a ``Dockerfile-SLM`` with contents:
+3. Create a ``Dockerfile-Licensing`` with contents:
 
    ```
    FROM netboxcommunity/netbox:vX.Y.Z
@@ -49,23 +51,23 @@ to install the Netbox SLM plugin:
          - 8000:8080
        build:
          context: .
-         dockerfile: Dockerfile-SLM
-       image: netbox:slm
+         dockerfile: Dockerfile-Licensing
+       image: netbox:licensing
      netbox-worker:
-       image: netbox:slm
+       image: netbox:licensing
      netbox-housekeeping:
-       image: netbox:slm
+       image: netbox:licensing
    ```
 
 Now, build the image: ``docker compose build --no-cache``
 
-And finally, run Netbox with the SLM plugin: ``docker compose up``
+And finally, run Netbox with the Licensing plugin: ``docker compose up``
 
 ## Releasing Guide
 
 To draft a release;
 
-update the `netbox_slm/__init__.py` file to reflect the new version, then from the *src*
+update the `netbox_licensing/__init__.py` file to reflect the new version, then from the *src*
 directory run
 
    ```
@@ -80,7 +82,7 @@ automated with a github workflow.
 ## Developer Guide (local installation)
 
 *Follow the steps below on your local system to run netbox and the
-netbox_slm plugin in developer mode*
+netbox_licensing plugin in developer mode*
 
 ### Setup
 
@@ -112,7 +114,7 @@ netbox docker runtime server.
    SECRET_KEY = 'dummy'
    DEVELOPER = True
    PLUGINS = [
-       'netbox_slm',
+       'netbox_licensing',
    ]
    ```
 
@@ -120,11 +122,11 @@ The Netbox installation above will be used to run Django management
 commands like runserver, makemigrations and migrate, which will be
 explained in the next steps below;
 
-   from your projects directory clone the netbox-slm repository
+   from your projects directory clone the netbox_licensing repository
 
    ```
-   $ git clone https://github.com/ICTU/netbox_slm
-   $ cd netbox_slm
+   $ git clone https://github.com/pkropf/netbox_licensing
+   $ cd netbox_licensing
    $ ./start-netbox.sh
    ```
    
@@ -153,7 +155,7 @@ Note, you can also start and stop netbox by hand:
    $ docker-compose up -d --force-recreate
    ```
    
-   this will require you to re-run the migrate commando's for netbox-slm, see further down below
+   this will require you to re-run the migrate commando's for netbox-licensing, see further down below
 
 Go back to the netbox configuration.py file and update the postgres and
 redis connection strings (username, password) to the ones the netbox
@@ -213,8 +215,8 @@ Now you can run commands from the netbox repository like this;
 
    ```
    $ cd netbox/netbox
-   $ export PYTHONPATH=../../netbox_slm/netbox_slm/  # or with the pipenv activated run `python3 setup.py develop` from the netbox_slm directory
-   $ python3 manage.py migrate netbox_slm
+   $ export PYTHONPATH=../../netbox_licensing/netbox_licensing/  # or with the pipenv activated run `python3 setup.py develop` from the netbox_licensing directory
+   $ python3 manage.py migrate netbox_licensing
    $ python3 manage.py runserver 8001
    ```
 
