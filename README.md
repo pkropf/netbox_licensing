@@ -2,7 +2,7 @@
 
 <p align="center"><i>Netbox Licensing is a plugin for licensing management of software components, including versions and installations.</i></p>
 
-<p align="center"><i>Based on the Netbox SLM plugin found at https://github.com/pkropf/netbox_slm</i></p>
+<p align="center"><i>Based on the Netbox SLM plugin found at https://github.com/ICTU/netbox_slm</i></p>
 
 <div align="center">
 <a href="https://pypi.org/project/netbox_licensing/"><img src="https://img.shields.io/pypi/v/netbox_licensing" alt="PyPi"/></a>
