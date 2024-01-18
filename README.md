@@ -116,6 +116,11 @@ netbox docker runtime server.
    PLUGINS = [
        'netbox_licensing',
    ]
+   PLUGINS_CONFIG = {
+       "netbox_licensing": {
+           "top_level_menu": True,
+       },
+   }
    ```
 
 The Netbox installation above will be used to run Django management

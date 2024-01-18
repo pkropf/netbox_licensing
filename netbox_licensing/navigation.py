@@ -1,7 +1,17 @@
+from django.conf import settings
 from extras.plugins import PluginMenuButton, PluginMenuItem
 from utilities.choices import ButtonColorChoices
 
-menu_items = (
+# compatibility with netbox v3.3 that does not have PluginMenu
+try:
+    from extras.plugins import PluginMenu
+    HAVE_MENU = True
+except ImportError:
+    HAVE_MENU = False
+    PluginMenu = PluginMenuItem
+
+
+menu_buttons = (
     PluginMenuItem(
         link="plugins:netbox_licensing:softwareproduct_list",
         link_text="Software Products",
@@ -83,3 +93,17 @@ menu_items = (
         ),
     ),
 )
+
+# can't use utils.get_plugin_setting() here, get value manually
+if (HAVE_MENU and settings.PLUGINS_CONFIG['netbox_licensing']['top_level_menu']):
+    # add a top level entry
+    menu = PluginMenu(
+        label=f'Licensing',
+        groups=(
+            ('Licensing Management', menu_buttons),
+        ),
+        icon_class='mdi mdi-clipboard-text-multiple-outline'
+    )
+else:
+    # display under plugins
+    menu_items = menu_buttons

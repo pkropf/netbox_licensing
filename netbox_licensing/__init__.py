@@ -1,15 +1,15 @@
 from extras.plugins import PluginConfig
 
-__version__ = "1.5"
+__version__ = "0.0"
 
 
-class SLMConfig(PluginConfig):
+class LicensingConfig(PluginConfig):
     name = "netbox_licensing"
     verbose_name = "Software Licensing Management"
     description = "Software Licensing Management Netbox Plugin."
     version = __version__
-    author = "ICTU"
-    author_email = "pkropf@Pm.me"
+    author = "Peter Kropf"
+    author_email = "pkropf@pm.me"
     base_url = "licensing"
     required_settings = []
     default_settings = {"version_info": False}
